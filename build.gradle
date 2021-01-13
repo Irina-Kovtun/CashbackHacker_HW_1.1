@@ -12,11 +12,10 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
-
+    testImplementation 'org.testng:testng:7.3.0'
 }
 test {
-    useJUnitPlatform()
+    useTestNG()
     testLogging {
         showStandardStreams = true
         events "passed", "skipped", "failed"
