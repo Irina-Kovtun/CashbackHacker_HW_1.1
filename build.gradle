@@ -12,21 +12,8 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.testng:testng:7.3.0'
+    testImplementation 'junit:junit:4.13'
 }
 test {
-    useTestNG()
-    testLogging {
-        showStandardStreams = true
-        events "passed", "skipped", "failed"
-    }
-    afterSuite { desc, result ->
-        if (!desc.parent) {
-            println "\nTest result: ${result.resultType}"
-            println "Test summary: ${result.testCount} tests completed, " +
-                    "${result.successfulTestCount} succeeded, " +
-                    "${result.failedTestCount} failed, " +
-                    "${result.skippedTestCount} skipped"
-        }
-    }
+    useJUnit()
 }
